@@ -3,168 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>自作パソコン - ゲーミング系サービス</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <title>TechForge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       background: #0a0a0a;
-      color: #fff;
       font-family: 'Orbitron', sans-serif;
-      line-height: 1.6;
+      color: #fff;
+      text-align: center;
     }
 
     header {
       background: linear-gradient(to right, #8a2be2, #39ff14);
-      padding: 1rem 2rem;
-      text-align: center;
+      padding: 2rem 1rem;
     }
 
     header h1 {
       font-size: 2.5rem;
-      color: #fff;
-      text-shadow: 0 0 10px #39ff14;
+      margin: 0;
     }
 
     .hero {
-      padding: 5rem 2rem;
-      text-align: center;
-      background: #111;
+      padding: 4rem 2rem;
     }
 
     .hero h2 {
-      font-size: 2rem;
+      color: #a12be2;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: #8a2be2;
     }
 
     .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: auto;
+      font-size: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .btn {
-      margin-top: 2rem;
+    .button {
+      background-color: #39ff14;
+      color: #000;
       padding: 1rem 2rem;
-      background: #39ff14;
-      color: #0a0a0a;
       font-weight: bold;
       border: none;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: background 0.3s ease;
     }
 
-    .btn:hover {
-      background: #8a2be2;
-      color: #fff;
+    .button:hover {
+      background-color: #2ecc71;
     }
 
     .features {
-      background: #1a1a1a;
+      background-color: #111;
       padding: 4rem 2rem;
-      text-align: center;
     }
 
     .features h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
       color: #39ff14;
-    }
-
-    .features p {
-      font-size: 1.1rem;
-      color: #ccc;
-      max-width: 800px;
-      margin: 0 auto;
-      opacity: 0; /* 初期状態では透明 */
-      display: none; /* 初期状態では非表示 */
-      transition: opacity 1s ease-in-out; /* フェードインのアニメーション */
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .contact {
-      background: #111;
       padding: 4rem 2rem;
-      text-align: center;
     }
 
     .contact h2 {
       color: #39ff14;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .contact p {
-      color: #ccc;
       margin-bottom: 1.5rem;
     }
 
-    .contact a {
-      display: inline-block;
+    .line-button {
+      background-color: #8a2be2;
+      color: white;
       padding: 1rem 2rem;
-      background: #8a2be2;
-      color: #fff;
-      font-weight: bold;
       text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
+      font-weight: bold;
+      display: inline-block;
     }
 
-    .contact a:hover {
-      background: #39ff14;
-      color: #0a0a0a;
+    .line-button:hover {
+      background-color: #6e1bb2;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #080808;
-      font-size: 0.9rem;
-      color: #777;
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .features h2,
+      .contact h2 {
+        font-size: 1.2rem;
+      }
+
+      .button,
+      .line-button {
+        width: 100%;
+        max-width: 300px;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>TechForge</h1> <!-- GamerX から TechForge に変更 -->
+    <h1>TechForge</h1>
   </header>
 
   <section class="hero">
-    <h2>ゲームのように熱く、サービスを届けろ。</h2>
+    <h2>ゲームのように熱く、サービスを届ける。</h2>
     <p>TechForgeは、ゲーマーのような集中力とスピードで、最高のサービス体験を提供するために生まれました。</p>
-    <button class="btn" id="showDescriptionBtn">今すぐ始める</button>
+    <button class="button">今すぐ始める</button>
   </section>
 
   <section class="features">
     <h2>サービスの特徴</h2>
-    <p id="serviceDescription">私たちのサービスは、すべてのゲーマーに最適な体験を提供します。安いものから高額なものまで作成します。自作パソコンを基盤に、ゲーマー専用にカスタマイズされたインターフェースと、必要なパフォーマンスを最大化する設定で、最高のゲーム体験を支援します。</p>
   </section>
 
   <section class="contact">
     <h2>お問い合わせ</h2>
     <p>ご相談・ご質問は、公式LINEからお気軽にどうぞ！</p>
-    <a href="https://lin.ee/tXRNCzX" target="_blank" class="btn">LINEで相談する</a>
+    <a href="#" class="line-button">LINEで相談する</a>
   </section>
-
-  <footer>
-    &copy; 2025 TechForge. All rights reserved. <!-- GamerX から TechForge に変更 -->
-  </footer>
-
-  <script>
-    // 「今すぐ始める」ボタンがクリックされたときに説明をフェードインして表示
-    document.getElementById('showDescriptionBtn').addEventListener('click', function() {
-      var description = document.getElementById('serviceDescription');
-      description.style.display = 'block';  // 非表示から表示に切り替え
-      setTimeout(function() {
-        description.style.opacity = 1;  // フェードインを開始
-      }, 10);  // 少し待ってからフェードインを開始
-    });
-  </script>
-
-</body>
-</html>
+</body
