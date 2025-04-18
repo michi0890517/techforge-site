@@ -53,29 +53,28 @@
       background-color: #2ecc71;
     }
 
-    .features {
-      background-color: #111;
+    .hidden-box {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.8s ease;
+      margin-top: 1.5rem;
+      padding: 0 2rem;
+      line-height: 1.8;
+    }
+
+    .hidden-box.show {
+      opacity: 1;
+      max-height: 500px;
+    }
+
+    .features, .contact {
       padding: 4rem 2rem;
     }
 
-    .features h2 {
-      color: #39ff14;
+    .features h2, .contact h2 {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact {
-      padding: 4rem 2rem;
-    }
-
-    .contact h2 {
       color: #39ff14;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact p {
-      margin-bottom: 1.5rem;
     }
 
     .line-button {
@@ -85,6 +84,7 @@
       text-decoration: none;
       font-weight: bold;
       display: inline-block;
+      margin-top: 1rem;
     }
 
     .line-button:hover {
@@ -100,15 +100,17 @@
         font-size: 1.5rem;
       }
 
-      .features h2,
-      .contact h2 {
+      .features h2, .contact h2 {
         font-size: 1.2rem;
       }
 
-      .button,
-      .line-button {
+      .button, .line-button {
         width: 100%;
         max-width: 300px;
+      }
+
+      .hidden-box {
+        padding: 0 1rem;
       }
     }
   </style>
@@ -122,6 +124,10 @@
     <h2>ゲームのように熱く、サービスを届ける。</h2>
     <p>TechForgeは、ゲーマーのような集中力とスピードで、最高のサービス体験を提供するために生まれました。</p>
     <button class="button">今すぐ始める</button>
+
+    <div id="explain-box" class="hidden-box">
+      <p>私たちのサービスは、すべてのゲーマーに最適な体験を提供します。安いものから高額なものまで作成します。自作パソコンを基盤に、ゲーマー専用にカスタマイズされたインターフェースと、必要なパフォーマンスを最大化する設定で、最高のゲーム体験を支援します。</p>
+    </div>
   </section>
 
   <section class="features">
@@ -133,4 +139,14 @@
     <p>ご相談・ご質問は、公式LINEからお気軽にどうぞ！</p>
     <a href="#" class="line-button">LINEで相談する</a>
   </section>
-</body
+
+  <script>
+    const button = document.querySelector('.button');
+    const box = document.getElementById('explain-box');
+
+    button.addEventListener('click', () => {
+      box.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
